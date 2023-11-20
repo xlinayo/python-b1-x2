@@ -1,0 +1,71 @@
+from enum import Enum
+import datetime
+from .entity import *
+
+# Do not change the value of ISD_FACTOR var
+ISD_FACTOR = 0.25
+
+
+class TaxType(Enum):
+    # Do not change this enum
+    IVA = 1
+    ISD = 2
+
+
+class Tax:
+    # Write the parameters in the next line
+    def __init__():
+        # Write here your code
+        pass
+
+
+class Product:
+     # Write the parameters in the next line
+    def __init__():
+        # Write here your code
+        pass        
+
+    def calculate_tax(self, tax: Tax) -> float:
+        # Write here your code
+        pass
+
+    def calculate_total_taxes(self) -> float:
+        # Write here your code
+        pass
+
+    def calculate_total(self) -> float:
+        # Write here your code
+        pass
+
+    def __eq__(self, another):
+        # Do not change this method
+        return hasattr(another, 'product_id') and self.product_id == another.product_id
+
+    def __hash__(self):
+        # Do not change this method
+        return hash(self.product_id)
+
+    def print(self):
+        # Do not change this method
+        print(
+            f"Product Id:{self.product_id} , name:{self.name}, quantity:{self.quantity}, price:{self.price}")
+        for tax in self.taxes:
+            print(f"Tax:{tax.tax_type} , percentage:{tax.percentage}")
+
+
+class Bill:
+    def __init__(self, bill_id: str, sale_date: datetime, seller: Seller, buyer: Buyer, products: list[Product]):
+        # Write here your code
+        pass
+       
+
+    def calculate_total(self) -> float:
+        # Write here your code
+        pass
+
+    def print(self):
+        # Do not change this method
+        self.buyer.print()
+        self.seller.print()
+        for product in self.products:
+            product.print()
