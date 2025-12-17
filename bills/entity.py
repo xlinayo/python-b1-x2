@@ -3,6 +3,9 @@ from abc import ABC, abstractmethod
 class Person:
     def __init__(self, dni: str, email: str, mobile: str):
         # Write here your code
+        self.dni = dni
+        self.email = email
+        self.mobile = mobile
         pass
 
     @abstractmethod
@@ -20,6 +23,9 @@ class Person:
 class Buyer(Person):
     def __init__(self, dni: str, email: str, mobile: str, full_name: str, age: int, address: str):
         # Write here your code
+        self.ful_name = full_name
+        self.age = age
+        self.address = address
         pass
 
     def print(self):
@@ -28,8 +34,11 @@ class Buyer(Person):
 
 class Seller(Person):
     # Write the parameters in the next line
-    def __init__():
-        # Write here your code        
+    def __init__(self, dni:str, email:str, mobile:str, bussines_name: str, bussines:address: str):
+        # Write here your code     
+        super.__init__(dni, email, mobile)
+        self.bussines_name = bussines_name
+        self.ussines_address = bussines_address
         pass
         
     def print(self):
